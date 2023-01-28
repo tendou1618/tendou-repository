@@ -54,4 +54,14 @@ abstract class BaseRepository implements RepositoryInterface
 
         return $this->model = $model;
     }
+
+    /**
+     * @param array $columns
+     * @return mixed
+     */
+    public function all($columns = array('*'))
+    {
+        // $this->applyCriteria();
+        return $this->model->get($columns);
+    }
 }
